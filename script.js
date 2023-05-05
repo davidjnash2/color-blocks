@@ -16,7 +16,17 @@ function onReady() { // declare onReady function
     $('#yellow-btn').on('click', appendYellowBlock);
 
     //registered event handler to execute remove function when any block is clicked in blocks div
-    $('#blocks').on('click', '.block', removeBlock);
+    
+    //$('#blocks').on('click', '.block', removeBlock);
+
+    $('#blocks').on('click', '.red-fill', removeRedBlock);
+
+    $('#blocks').on('click', '.blue-fill', removeBlueBlock);
+
+    $('#blocks').on('click', '.green-fill', removeGreenBlock);
+
+    $('#blocks').on('click', '.yellow-fill', removeYellowBlock);
+
 } // end onReady function
 
 let redCount = 1; // declare redCount variable and set initial value
@@ -50,9 +60,33 @@ function appendYellowBlock() { // start appendYellowBlock function
     $('#yellow-count').html(yellowCount); // log yellowCount value changes to index file
 } // end appendYellowBlock function
 
-function removeBlock() { //start removeBlock function/event handler
-    $(this).remove(); // event handler to remove each block
-} //end removeBlock function
+// function removeBlock() { //start removeBlock function/event handler
+//     $(this).remove(); // event handler to remove each block
+// } //end removeBlock function
 
+
+function removeRedBlock() { //start removeRedBlock function/event handler
+    $(this).remove(); // event handler to remove each clicked block
+    redCount--; // decrement redCount with each click
+    $('#red-count').html(redCount); // log count to html file
+} //end removeRedBlock function
+
+function removeBlueBlock() { //start removeRedBlock function/event handler
+    $(this).remove(); // event handler to remove each clicked block
+    blueCount--; // decrement redCount with each click
+    $('#blue-count').html(blueCount); // log count to html file
+} //end removeBlueBlock function
+
+function removeGreenBlock() { //start removeRedBlock function/event handler
+    $(this).remove(); // event handler to remove each clicked block
+    greenCount--; // decrement redCount with each click
+    $('#green-count').html(greenCount); // log count to html file
+} //end removeGreenBlock function
+
+function removeYellowBlock() { //start removeRedBlock function/event handler
+    $(this).remove(); // event handler to remove each clicked block
+    yellowCount--; // decrement redCount with each click
+    $('#yellow-count').html(yellowCount); // log count to html file
+} //end removeYellowBlock function
 
 
